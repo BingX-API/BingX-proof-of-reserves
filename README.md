@@ -16,12 +16,12 @@ Hash your BingX UID with SHA256. All UID of the individuals will be hashed with 
 
 ### Combine with assets
 1. Check your balance in BingX proof-of-reserves page.
-2. Combine users' hashed User ID with their assets in the following format. Assets are in ascending order (A-Z) by the name.
+2. Combine users' hashed User ID with their assets in the following format. Assets are in the order below.
 
-> {Hashed UID},{Asset1}:{Balance1},{Asset2}:{Asset2},Total:{TotalValueInUsd}
+> {Hashed UID},{Asset1}:{Balance1},{Asset2}:{Balance2},{Asset3}:{Balance3},{Asset4}:{Balance4},Total:{TotalValueInUsd}
 
 e.g.
-> abcdefg,BTC:1.132142,ETH:2.54469871,USDT:20384,Total:49875.12599
+> abcdefg,BTC:1.132142,ETH:2.54469871,USDT:20384,USDC:50.3,Total:49875.12599
 
 Use the following number formatting rules to format the balance:
 - No Scientific Notation
@@ -51,7 +51,7 @@ Python 3.4 or above
 > python por.py hash {asset string}
 
 e.g.
-> python por.py hash abcdefg,BTC:1.132142,ETH:2.54469871,USDT:20384,Total:49875.12599
+> python por.py hash abcdefg,BTC:1.132142,ETH:2.54469871,USDT:20384,USDC:50.3,Total:49875.12599
 
 - Verify the inclusion of the Merkle leaf, compare the result with the Merkle root
 > python por.py verify {Merkle leaf} {Merkle path}
