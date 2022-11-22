@@ -31,7 +31,11 @@ def generate_root(merkle_leaf, path):
     path_list = list(path.split(','))
     root_hash = merkle_leaf
     for index in range(len(path_list)):
-        root_hash = sha256(root_hash.join(path_list[index]).encode()).hexdigest().upper()
+        other_leaf_info = path_list[index].split(':')
+        if other_leaf_info[0] == "l":
+            root_hash = sha256((other_leaf_info[1] + root_hash).encode()).hexdigest().lower()
+        else:
+            root_hash = sha256((root_hash + other_leaf_info[1]).encode()).hexdigest().lower()
     return root_hash
 
 
