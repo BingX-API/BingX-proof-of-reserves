@@ -20,7 +20,7 @@ args = parser.parse_args()
 
 # put raw input string to hash string
 def hash(raw_input_string):
-    hash_result = sha256(raw_input_string.encode()).hexdigest().upper()
+    hash_result = sha256(raw_input_string.encode()).hexdigest().lower()
     return hash_result
 
 
