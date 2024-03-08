@@ -18,7 +18,7 @@ Hash your BingX UID with SHA256. All UID of the individuals will be hashed with 
 1. Check your balance in BingX proof-of-reserves page.
 2. Combine users' hashed User ID with their assets in the following format. Assets are in the order below.
 
-> {Hashed UID},{Asset1}:{Balance1},{Asset2}:{Balance2},{Asset3}:{Balance3},{Asset4}:{Balance4},Total:{TotalValueInUsd}
+> {6e2dcfe5474446c744b353fb153f55930914b069c84e70242f989e66d03cfa62 12180864},{BTC}:{0},{ETH}:{0},{USDT}:{802.6287571},{USDC}:{0},Total:{802.6287571}
 
 e.g.
 > abcdefg,BTC:1.132142,ETH:2.54469871,USDT:20384,USDC:50.3,Total:49875.12599
